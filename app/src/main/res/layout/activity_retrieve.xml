@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/issue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="旧衣发布" />
+    <Button
+        android:id="@+id/evaluate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="预约估价"/>
+    <Button
+        android:id="@+id/recover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="预约回收"/>
+</LinearLayout>
