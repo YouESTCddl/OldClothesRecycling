@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.apress.gerber.oldclothesrecycling1.RecoverActivity">
-
+    tools:context=".RecoverActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -17,10 +16,10 @@
             android:layout_height="wrap_content"
             android:hint="时间(输入格式为:年/月/日)"/>
         <EditText
-            android:id="@+id/recover_place"
+            android:id="@+id/order_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="地点"/>
+            android:hint="订单号"/>
         <EditText
             android:id="@+id/recover_phone"
             android:layout_width="match_parent"
@@ -37,6 +36,5 @@
             android:layout_height="wrap_content"
             android:text="提交预约"/>
     </LinearLayout>
-
 
 </android.support.constraint.ConstraintLayout>

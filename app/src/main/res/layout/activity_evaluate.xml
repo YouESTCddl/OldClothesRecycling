@@ -5,21 +5,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.apress.gerber.oldclothesrecycling1.EvaluateActivity">
+    tools:context=".EvaluateActivity">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/description"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="88dp"
-            android:hint="请输入衣物描述"/>
+            android:layout_height="152dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="48dp"
+                android:layout_height="151dp"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/btn_star" />
+
+            <Button
+                android:id="@+id/addPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="152dp"
+                android:layout_weight="1"
+                android:background="@android:color/background_light"
+                android:text="拍照" />
+        </LinearLayout>
+
         <Button
-            android:id="@+id/submit_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="提交"/>
+            android:id="@+id/submitPhoto"
+            android:layout_width="400dp"
+            android:layout_height="320dp"
+            android:layout_weight="1"
+            android:background="@android:color/background_light"
+            android:text="提交照片" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -34,12 +34,14 @@ import okhttp3.Response;
 public class IssueActivity extends AppCompatActivity {
     private ListView lv;
     public ArrayList<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
+    static int flag=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issue);
         lv=(ListView)findViewById(R.id.listview);
-        //init();
+        init();
+        Toast.makeText(IssueActivity.this,""+flag,Toast.LENGTH_LONG).show();
     }
     private void init(){
         list.clear();
@@ -52,9 +54,9 @@ public class IssueActivity extends AppCompatActivity {
                     //服务器返回的地址
                     Request request=new Request.Builder().url("http://10.0.2.2/test.json").build();
                     Response response=okHttpClient.newCall(request).execute();
+
                     //获取数据
                     String data=response.body().string();
-                    Toast.makeText(IssueActivity.this,data,Toast.LENGTH_LONG).show();
                     //把数据传入解析json的数据方法
                     jsonJX(data);
                 }catch (IOException e){
