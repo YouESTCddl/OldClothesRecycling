@@ -6,4 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".RecoverActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/recover_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="时间(输入格式为:年/月/日)"/>
+        <EditText
+            android:id="@+id/recover_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="地点"/>
+        <EditText
+            android:id="@+id/recover_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="电话"/>
+        <EditText
+            android:id="@+id/recover_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="备注"/>
+        <Button
+            android:id="@+id/recover_commit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提交预约"/>
+    </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
