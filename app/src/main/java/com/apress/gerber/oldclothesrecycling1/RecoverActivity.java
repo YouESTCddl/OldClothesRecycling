@@ -19,7 +19,7 @@ import okhttp3.Response;
 public class RecoverActivity extends AppCompatActivity {
     EditText timeText,phoneText,commentText,orderText;
     Button submitButton;
-    String url;
+    String url="http://10.0.2.2/test.json";
     static int flag=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class RecoverActivity extends AppCompatActivity {
                             OkHttpClient okHttpClient=new OkHttpClient();//创建OkHttpClient对象
                             //提交的接口还未完成
                             Request request = new Request.Builder()
-                                    .url("url")
+                                    .url(url)
                                     .build();
                             Response response = null;
                             response = okHttpClient.newCall(request).execute();//得到Response 对象
@@ -53,12 +53,13 @@ public class RecoverActivity extends AppCompatActivity {
                         }
                     }
                 }).start();
+                if (flag==1)
+                    Toast.makeText(RecoverActivity.this,"成功预约回收，您将会在三天内收到估价信息",Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(RecoverActivity.this,"抱歉，网络错误",Toast.LENGTH_SHORT).show();
             }
         });
-        if (flag==1)
-            Toast.makeText(RecoverActivity.this,"成功预约回收，您将会在三天内收到估价信息",Toast.LENGTH_SHORT).show();
-        else
-            Toast.makeText(RecoverActivity.this,"抱歉，网络错误",Toast.LENGTH_SHORT).show();
+
 
 
 

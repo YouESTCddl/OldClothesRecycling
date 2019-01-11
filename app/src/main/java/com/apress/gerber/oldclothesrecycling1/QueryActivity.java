@@ -2,6 +2,7 @@ package com.apress.gerber.oldclothesrecycling1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -36,7 +37,12 @@ public class QueryActivity extends AppCompatActivity {
         }catch (IOException e){
             e.printStackTrace();
         }
-
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
     public Response httpUtlil(){
         final Response[] response = new Response[1];
@@ -44,7 +50,7 @@ public class QueryActivity extends AppCompatActivity {
             @Override
             public void run() {
                 OkHttpClient okHttpClient=new OkHttpClient();
-                Request request=new Request.Builder().url(url).build();
+                Request request=new Request.Builder().url("http://10.0.2.2/test.json").build();
 
                 try {
                     response[0] =okHttpClient.newCall(request).execute();

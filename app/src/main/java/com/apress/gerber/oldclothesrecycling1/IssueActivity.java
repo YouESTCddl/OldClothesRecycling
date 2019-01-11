@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.apress.gerber.oldclothesrecycling.R;
@@ -41,7 +42,6 @@ public class IssueActivity extends AppCompatActivity {
         setContentView(R.layout.activity_issue);
         lv=(ListView)findViewById(R.id.listview);
         init();
-        Toast.makeText(IssueActivity.this,""+flag,Toast.LENGTH_LONG).show();
     }
     private void init(){
         list.clear();
@@ -77,7 +77,9 @@ public class IssueActivity extends AppCompatActivity {
                         Map<String,Object> map=new HashMap<String,Object>();
                         JSONObject object=jsonArray.getJSONObject(i);
                         String pic=object.getString("pic");
+                        String title=object.getString("title");
                         Log.d("IssueActivity","dio");
+                        map.put("title",title);
                         map.put("pic",pic);
                         list.add(map);
                     }
@@ -132,6 +134,7 @@ public class IssueActivity extends AppCompatActivity {
                 LayoutInflater layoutInflater=LayoutInflater.from(IssueActivity.this);
                 convertView=layoutInflater.inflate(R.layout.listview_item,null);
                 viewHolder.img=(ImageView)convertView.findViewById(R.id.list_img);
+                viewHolder.textView=(TextView)convertView.findViewById(R.id.list_textview);
                 convertView.setTag(viewHolder);
             }
             else viewHolder=(ViewHolder)convertView.getTag();
@@ -146,10 +149,12 @@ public class IssueActivity extends AppCompatActivity {
                         .load(list.get(position).get("pic").toString())
                         .placeholder(R.drawable.ic_launcher_background).into(viewHolder.img);
             }
+            viewHolder.textView.setText(list.get(position).get("title").toString());
             return convertView;
         }
     }
     final class ViewHolder{
+        TextView textView;
         ImageView img;
     }
 }

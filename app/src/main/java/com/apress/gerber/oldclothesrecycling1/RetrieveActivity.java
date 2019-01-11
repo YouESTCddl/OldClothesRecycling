@@ -12,6 +12,7 @@ public class RetrieveActivity extends AppCompatActivity {
     private Button mIssue;                                      //旧衣发布
     private Button mEvaluate;                                   //预约估价
     private Button mRecover;                                    //预约回收
+    private Button mQuery;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,7 @@ public class RetrieveActivity extends AppCompatActivity {
         mIssue=(Button)findViewById(R.id.issue);
         mEvaluate=(Button)findViewById(R.id.evaluate);
         mRecover=(Button)findViewById(R.id.recover);
+        mQuery=(Button)findViewById(R.id.query);
         //
         mIssue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,5 +47,12 @@ public class RetrieveActivity extends AppCompatActivity {
             }
         });
         //
+        mQuery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(RetrieveActivity.this,QueryActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

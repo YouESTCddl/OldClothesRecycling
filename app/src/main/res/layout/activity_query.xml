@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.apress.gerber.oldclothesrecycling.QueryActivity">
+    tools:context="com.apress.gerber.oldclothesrecycling1.QueryActivity">
 
     <TextView
         android:id="@+id/titleText"
@@ -13,7 +13,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="免费租衣余额"
+        android:text="免费租衣余期"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
