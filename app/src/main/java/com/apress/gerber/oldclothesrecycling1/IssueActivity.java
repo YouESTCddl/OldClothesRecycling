@@ -36,6 +36,7 @@ public class IssueActivity extends AppCompatActivity {
     private ListView lv;
     public ArrayList<Map<String,Object>> list=new ArrayList<Map<String,Object>>();
     static int flag=0;
+    private String url="http://ssh2.evi0s.com:3000/alldata";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class IssueActivity extends AppCompatActivity {
                 try{
                     OkHttpClient okHttpClient=new OkHttpClient();
                     //服务器返回的地址
-                    Request request=new Request.Builder().url("http://10.0.2.2/test.json").build();
+                    Request request=new Request.Builder().url(url).build();
                     Response response=okHttpClient.newCall(request).execute();
 
                     //获取数据
